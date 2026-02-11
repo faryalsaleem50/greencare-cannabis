@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edibles – Green Care Cannabis Dispensary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#22c55e",
+            secondary: "#166534",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="index.html">
+          <img
+            src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/06/GREEN-CARE-2-300x281.png"
+            alt="Logo"
+            class="h-10 object-contain"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="font-medium hover:text-primary transition">Home</a>
+
+        <!-- Shop Menu Dropdown -->
+        <div class="relative group">
+          <button class="font-medium hover:text-primary transition flex items-center">
+            Shop Menu
+            <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a href="flower.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">Flower</a>
+            <a href="edibles.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">Edibles</a>
+            <a href="cdm.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">CDM</a>
+            <a href="concentrates.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">Concentrates</a>
+            <a href="vaporizers.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">Vaporizers</a>
+            <a href="pre-rolls.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">Pre‑Rolls</a>
+            <a href="marijuana.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-primary">Marijuana</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="font-medium hover:text-primary transition">About Us</a>
+        <a href="products.html" class="font-medium hover:text-primary transition">Add to Cart</a>
+        <a href="login.html" class="font-medium hover:text-primary transition">Login</a>
+        <a href="contact.html" class="font-medium hover:text-primary transition">Contact Us</a>
+      </div>
+
+      
+    <!-- Mobile menu button -->
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg p-4">
+    <a href="index.html" class="block py-2 hover:text-primary">Home</a>
+
+   <!-- Mobile Shop Menu (click se dropdown) -->
+<div class="border-t border-gray-200 pt-2">
+  <button id="mobileShopBtn" class="w-full text-left font-medium hover:text-primary transition flex justify-between items-center">
+    Shop Menu
+    <svg id="mobileShopIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>
+  </button>
+  <div id="mobileShopDropdown" class="hidden mt-2 space-y-1 pl-4">
+    <a href="flower.html" class="block hover:text-primary">Flower</a>
+    <a href="edibles.html" class="block hover:text-primary">Edibles</a>
+    <a href="cdm.html" class="block hover:text-primary">CDM</a>
+    <a href="concentrates.html" class="block hover:text-primary">Concentrates</a>
+    <a href="vaporizers.html" class="block hover:text-primary">Vaporizers</a>
+    <a href="pre-rolls.html" class="block hover:text-primary">Pre‑Rolls</a>
+    <a href="marijuana.html" class="block hover:text-primary">Marijuana</a>
+  </div>
+</div>
+
+
+    <a href="about.html" class="block py-2 hover:text-primary">About Us</a>
+    <a href="products.html" class="block py-2 hover:text-primary">Add to Cart</a>
+    <a href="login.html" class="block py-2 hover:text-primary">Login</a>
+    <a href="contact.html" class="block py-2 hover:text-primary">Contact Us</a>
+  </div>
+</header>
+
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Heading -->
+    <h1 class="text-3xl font-bold mb-8 text-green-600">Edibles</h1>
+
+    <!-- 16 Product Cards -->
+    <div id="productGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/13-Releaf-Capsules-7-pack.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">1:3 Releaf Capsules | 7 pack</h3>
+          <p class="text-sm text-gray-600"></p>
+          <p class="font-bold mt-1">$19.99</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/30-Count-Delta-9-Gummies-In-Box-BR-600x524.jpg" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Delta 9 Gummies | 30 Count</h3>
+          <p class="text-sm text-gray-600">These delicious gummies are packed with 10mg of premium hemp-derived delta-9 THC distillate each, and each package contains either five gummies or 30 gummies for a total of 50mg-300mg of delta-9 THC per package.</p>
+          <p class="font-bold mt-1">$100</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/Mota-Full-Spectrum-Cannabis.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">10mg THC Capsules (Mota)</h3>
+          <p class="text-sm text-gray-600">Full spectrum cannabis with 22% THC</p>
+          <p class="font-bold mt-1">$60</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/Watermelon-Lemonade-pouch-15mg-for-website.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">15mg ‘Bliss’ Watermelon Lemonade High Dose</h3>
+          <p class="text-sm text-gray-600">Find yourself on a blissful beach with our Kiva ‘Bliss’ Watermelon Lemonade Camino gummies. Let sativa and indica terpenes alongside juicy watermelon and tart citrus welcome you to your happy place.</p>
+          <p class="font-bold mt-1">$15</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/Boost-Edibles-50mg-THC-Capsules.jpg" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">50MG THC GEL CAPSULES (BOOST EDIBLES)</h3>
+          <p class="text-sm text-gray-600">Forget sugar and extra sweeteners, and instead, give your body exactly what it wants and deserves. Rich in Omega 3 & 6, you’ll be doing both your mind and body a favour.
+</p>
+          <p class="font-bold mt-1">$95</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/Dark-Chocolate-Bar-600x600.avif" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">5mg : 2mg CBN Kiva ‘Midnight Mint’ Dark Chocolate Bar 100mg THC : 40mg CBN total
+</h3>
+          <p class="text-sm text-gray-600">So we carefully craft each bar using sustainably-sourced cacao, all-natural flavors, and clean, pure cold water hash for a richer, fuller cannabis experience that captures the essence of the whole plant.
+</p>
+          <p class="font-bold mt-1">$19</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/Birthday-Cake-600x600.jpg" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">5mg Kiva ‘Birthday Cake’ White Chocolate Bar 100mg THC total
+</h3>
+          <p class="text-sm text-gray-600">We carefully craft each bar using sustainably-sourced cacao, all-natural flavors, and clean, pure cold water hash for a richer, fuller cannabis experience that captures the essence of the whole plant.
+
+</p>
+          <p class="font-bold mt-1">$50</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/menu_kiva_milk.jpg" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">5mg Kiva ‘Milk’ Chocolate Bar 100mg THC total</h3>
+          <p class="text-sm text-gray-600">Like all Kiva chocolates, this bar is crafted from sustainably sourced, premium cacao infused with handmade, cold water hash. Ideal for those with a love for chocolate and a refined palate.
+
+</p>
+          <p class="font-bold mt-1">$19</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/kivacasm-chocolate.avif" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">5mg Kiva ‘S’mores’ Milk Chocolate Bar 100mg THC total
+</h3>
+          <p class="text-sm text-gray-600">We carefully craft each bar using sustainably-sourced cacao, all-natural flavors, and clean, pure cold water hash for a richer, fuller cannabis experience that captures the essence of the whole plant.</p>
+          <p class="font-bold mt-1">$19</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/600-Cherry-Front-600x754.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">600MG CBD Cherry Gummy</h3>
+          <p class="text-sm text-gray-600">Half the size, all the relaxation. The 600 Cherry is your pocket-sized partner in chill, ready to turn down the volume on a bustling New York day.</p>
+          <p class="font-bold mt-1">$32</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/ASSORTED-FLAVORS.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Assorted Flavors BIIIT – Sour Gummy Cubes
+</h3>
+          <p class="text-sm text-gray-600"></p>
+          <p class="font-bold mt-1">$30</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/Punch-BarBlackberry-Strawberry-Raspberry.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Berry Fruit Snack Pack
+</h3>
+          <p class="text-sm text-gray-600"></p>
+          <p class="font-bold mt-1">$20</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/BP_BDayCake_10pk_Indica.avif" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Birthday Cake Cookies 100mg Indica (10pk)
+</h3>
+          <p class="text-sm text-gray-600">For our birthday we asked for EXTRA sprinkles! Celebrating 10 years of Cannabis cookies we introduce our newest flavor, Birthday Cake! A delicious sugar cookie full of rainbow sprinkles. Come celebrate with us.
+
+</p>
+          <p class="font-bold mt-1">$14</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/PLUS-Unwind-Black-Cherry-Mint.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Black Cherry UNWIND Mints</h3>
+          <p class="text-sm text-gray-600"></p>
+          <p class="font-bold mt-1">$25</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+       
+       <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/07/blueberry.webp" alt="Product" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Blueberry 1:1:1 THC:CBD:CBN Sour Gummies</h3>
+          <p class="text-sm text-gray-600"></p>
+          <p class="font-bold mt-1">$50</p>
+          <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Repeat 15 more cards with same structure -->
+      <!-- Yahan pe 15 aur cards copy‑paste karo, har me add-to-cart class rakho -->
+    </div>
+
+   <!-- Extra 14 Cards (hidden by default) -->
+<div id="extraProducts" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 hidden mt-8">
+  <!-- Card 17 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/Shipwreck-Edibles-Blueberry.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Blueberry by ShipWreck Edibles (150mg THC)
+</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$25</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/Emerald-Sky-California-Orange-Gummies.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">California Orange Gummies
+</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$25</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/CBD-Gummies-3000MG-Jar.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">CBD Gummies 3000mg Jar</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$99</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/CBD-Gummies-3000mg-2.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">CBD Gummies 3000mg 2</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$99</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/Gummies-300mg-Party-Pack.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Gummies 300mg Party Pack</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$99</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/CBD-Gummies-500mg-Jar.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">CBD Gummies 500mg Jar</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$40</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/CBD-Gummies-750mg-Jar.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">CBD Gummies 750mg Jar</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$45</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/CBD-Gummies.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">CBD Gummies</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$50</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/PLUS-Gummies-CBD-Relief.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">PLUS Gummies CBD Relief</h3>
+      <p class="text-sm text-gray-600"></p>
+      <p class="font-bold mt-1">$25</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2022/08/PLUS-Mango-CBD-relief-gummies.webp" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Flower Product 17</h3>
+      <p class="text-sm text-gray-600">Indica, 22% THC</p>
+      <p class="font-bold mt-1">$50</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://via.placeholder.com/300" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Flower Product 17</h3>
+      <p class="text-sm text-gray-600">Indica, 22% THC</p>
+      <p class="font-bold mt-1">$50</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://via.placeholder.com/300" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Flower Product 17</h3>
+      <p class="text-sm text-gray-600">Indica, 22% THC</p>
+      <p class="font-bold mt-1">$50</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://via.placeholder.com/300" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Flower Product 17</h3>
+      <p class="text-sm text-gray-600">Indica, 22% THC</p>
+      <p class="font-bold mt-1">$50</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="https://via.placeholder.com/300" alt="Product" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold">Flower Product 17</h3>
+      <p class="text-sm text-gray-600">Indica, 22% THC</p>
+      <p class="font-bold mt-1">$50</p>
+      <button class="mt-2 bg-primary text-white px-3 py-1 rounded hover:bg-secondary transition add-to-cart">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <!-- Repeat 13 more cards with same structure -->
+</div>
+
+
+    <!-- Load More / Show Less Button -->
+    <div class="text-center mt-8">
+      <button id="loadMoreBtn" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+        Load More
+      </button>
+    </div>
+  </main>
+
+<footer class="w-full bg-blue-950 py-24 text-white">
+  <div class="container mx-auto px-4 flex flex-col items-center justify-center min-h-[400px]">
+    <!-- Big Logo (center) -->
+    <div class="mb-10">
+      <img
+        src="https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/06/GREEN-CARE-1.png"
+        alt="Green Care Cannabis Dispensary"
+        class="h-28 md:h-36 object-contain mx-auto"
+      />
+    </div>
+
+    <!-- Footer Text (bigger) -->
+    <p class="text-xl md:text-2xl font-medium mb-8 text-center max-w-3xl leading-relaxed">
+      Green Care Cannabis Dispensary – Quality products, expert staff, and a welcoming environment.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-8 text-lg mb-6">
+      <a href="about.html" class="hover:text-blue-100 transition">About Us</a>
+      <a href="products.html" class="hover:text-blue-100 transition">Shop Menu</a>
+      <a href="contact.html" class="hover:text-blue-100 transition">Contact Us</a>
+      <a href="privacy.html" class="hover:text-blue-100 transition">Privacy Policy</a>
+      <a href="terms.html" class="hover:text-blue-100 transition">Terms of Service</a>
+    </div>
+
+    <p class="text-base text-blue-100">
+      &copy; 2026 Green Care Cannabis Dispensary. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+  <!-- JS -->
+  <script>
+    const productGrid = document.getElementById("productGrid");
+    const extraProducts = document.getElementById("extraProducts");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    // Load More / Show Less
+    loadMoreBtn.addEventListener("click", () => {
+      if (extraProducts.classList.contains("hidden")) {
+        extraProducts.classList.remove("hidden");
+        loadMoreBtn.textContent = "Show Less";
+        loadMoreBtn.classList.remove("bg-green-600");
+        loadMoreBtn.classList.add("bg-red-600");
+      } else {
+        extraProducts.classList.add("hidden");
+        loadMoreBtn.textContent = "Load More";
+        loadMoreBtn.classList.remove("bg-red-600");
+        loadMoreBtn.classList.add("bg-green-600");
+      }
+    });
+
+    // Add to Cart
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const card = e.target.closest(".bg-white");
+        const name = card.querySelector("h3").textContent;
+        const priceText = card.querySelector("p.font-bold").textContent;
+        const price = parseFloat(priceText.replace("$", ""));
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added to cart successfully!");
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

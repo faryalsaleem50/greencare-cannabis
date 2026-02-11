@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add to Cart – Green Care Cannabis Dispensary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#22c55e",
+            secondary: "#166534",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar (same as index.html) -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <!-- ... same navbar code ... -->
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8 text-green-600">Your Cart</h1>
+
+    <!-- Cart Items -->
+    <div id="cartItems" class="space-y-4">
+      <!-- Items will be inserted here -->
+    </div>
+
+    <!-- Empty Cart Message -->
+    <p id="emptyCart" class="text-gray-600 hidden">Your cart is empty.</p>
+
+    <!-- Total Price -->
+    <div class="mt-8 text-right">
+      <p class="text-xl font-bold">Total: <span id="totalPrice">$0.00</span></p>
+    </div>
+  </main>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="w-full bg-blue-400 py-24 text-white">
+    <!-- ... same footer code ... -->
+  </footer>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItems = document.getElementById("cartItems");
+    const emptyCart = document.getElementById("emptyCart");
+    const totalPrice = document.getElementById("totalPrice");
+
+    function renderCart() {
+      cartItems.innerHTML = "";
+      if (cart.length === 0) {
+        emptyCart.classList.remove("hidden");
+        totalPrice.textContent = "$0.00";
+        return;
+      }
+      emptyCart.classList.add("hidden");
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        const price = parseFloat(item.price.replace("$", ""));
+        total += price * item.quantity;
+
+        cartItems.innerHTML += `
+          <div class="bg-white rounded-lg shadow p-4 flex justify-between items-center">
+            <div>
+              <h3 class="font-semibold">${item.name}</h3>
+              <p class="text-sm text-gray-600">${item.price} x ${item.quantity}</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <button class="bg-red-600 text-white px-2 py-1 rounded decrease" data-index="${index}">–</button>
+              <span class="font-medium">${item.quantity}</span>
+              <button class="bg-green-600 text-white px-2 py-1 rounded increase" data-index="${index}">+</button>
+            </div>
+          </div>
+        `;
+      });
+
+      totalPrice.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Initial render
+    renderCart();
+
+    // Increase / Decrease Quantity
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("increase")) {
+        const index = e.target.dataset.index;
+        cart[index].quantity += 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      } else if (e.target.classList.contains("decrease")) {
+        const index = e.target.dataset.index;
+        if (cart[index].quantity > 1) {
+          cart[index].quantity -= 1;
+        } else {
+          cart.splice(index, 1);
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      }
+    });
+  </script>
+</body>
+</html>
