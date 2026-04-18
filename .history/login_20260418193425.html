@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us – Green Care Cannabis Dispensary</title>
+  <title>Login – Green Care Cannabis Dispensary</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -102,104 +102,29 @@
         </div>
     </header>
 
- <!-- Hero Section (Contact Us) -->
-<section
-  class="relative w-full h-64 md:h-screen bg-cover bg-center"
-  style="background-image: url('https://www.greencarecannabisdispensary.com/wp-content/uploads/2024/06/1500x1000-136.png');"
->
-  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-  <div class="relative flex items-center justify-center h-full text-center text-white px-4">
-    <h1 class="text-3xl md:text-4xl font-bold">Contact Us</h1>
-  </div>
-</section>
-
-<section class="w-full py-16">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row gap-10">
-      <!-- Left: Text Content -->
-      <div class="md:w-1/2 space-y-6">
-        <h2 class="text-3xl font-bold text-green-600 mb-4">Customer Service</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Welcome to Green Care Cannabis Dispensary, where we work every day to provide our customers with an unrivaled shopping experience. Our budtenders are highly knowledgeable to help you select the product you need.
-        </p>
-
-        <h3 class="text-xl font-bold text-gray-800 mt-6">Contact Info</h3>
-        <p class="text-gray-600">
-          <strong>Business Hours:</strong> 24/7 A Week
-        </p>
-        <p class="text-gray-600">
-          <a href="mailto:info@greencarecannabisdispensary.com" class="text-green-600 hover:underline">
-            info@greencarecannabisdispensary.com
-          </a>
-        </p>
-        <p class="text-gray-600 mt-4">
-          We’re Here for You.
-        </p>
-         <div class="mt-4" <h5>for contact</h5>
-  <a href="tel:+923001234567" class="text-lg font-semibold hover:text-blue-300">
-    📞 +1 (424) 441-4831
-  </a>
-</div>
+  <main class="container mx-auto px-4 py-12 max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+    <form id="loginForm" class="bg-white p-6 rounded-lg shadow">
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">Email</label>
+        <input type="email" name="email" class="w-full border rounded-lg px-3 py-2" required />
       </div>
-      
-
-      <!-- Right: Contact Form -->
-      <div class="md:w-1/2">
-        <form id="contactForm" class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-4">Send a Message</h3>
-
-          <div class="mb-4">
-            <label class="block text-sm font-medium mb-1">Name</label>
-            <input
-              type="text"
-              name="name"
-              class="w-full border rounded-lg px-3 py-2"
-              required
-            />
-          </div>
-
-          <div class="mb-4">
-            <label class="block text-sm font-medium mb-1">Email</label>
-            <input
-              type="email"
-              name="email"
-              class="w-full border rounded-lg px-3 py-2"
-              required
-            />
-          </div>
-
-          <div class="mb-4">
-            <label class="block text-sm font-medium mb-1">Subject</label>
-            <input
-              type="text"
-              name="subject"
-              class="w-full border rounded-lg px-3 py-2"
-              required
-            />
-          </div>
-
-          <div class="mb-4">
-            <label class="block text-sm font-medium mb-1">Message</label>
-            <textarea
-              name="message"
-              rows="4"
-              class="w-full border rounded-lg px-3 py-2"
-              required
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
-          >
-            Send Message
-          </button>
-        </form>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">Password</label>
+        <input type="password" name="password" class="w-full border rounded-lg px-3 py-2" required />
       </div>
-    </div>
-  </div>
-</section>
-
+      <button
+        type="submit"
+        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition"
+      >
+        Login
+      </button>
+      <p class="text-center mt-4 text-sm">
+        Don’t have an account?
+        <a href="signup.html" class="text-primary hover:underline">Sign Up</a>
+      </p>
+    </form>
+  </main>
 
   <footer class="w-full bg-blue-950 py-24 text-white">
   <div class="container mx-auto px-4 flex flex-col items-center justify-center min-h-[400px]">
@@ -216,11 +141,8 @@
     <p class="text-xl md:text-2xl font-medium mb-8 text-center max-w-3xl leading-relaxed">
       Green Care Cannabis Dispensary – Quality products, expert staff, and a welcoming environment.
     </p>
- <div class="mt-4" <h5>for contact</h5>
-  <a href="tel:+923001234567" class="text-lg font-semibold hover:text-blue-300">
-    📞 +1 (424) 441-4831
-  </a>
-</div>
+    
+
     <div class="flex flex-wrap justify-center gap-8 text-lg mb-6">
       <a href="about.html" class="hover:text-blue-100 transition">About Us</a>
       <a href="products.html" class="hover:text-blue-100 transition">Shop Menu</a>
@@ -235,8 +157,15 @@
   </div>
 </footer>
 
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Login successful!");
+      window.location.href = "index.html";
+    });
+  </script>
 
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
